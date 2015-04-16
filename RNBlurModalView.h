@@ -39,7 +39,7 @@ extern NSString * const kRNBlurDidHidewNotification;
 @property (assign) BOOL dismissButtonRight;
 @property (nonatomic, copy) void (^defaultHideBlock)(void);
 
-- (id)initWithViewController:(UIViewController*)viewController view:(UIView*)view;
+- (id)initWithViewController:(UIViewController*)viewController view:(UIView*)view center:(CGPoint) center;
 - (id)initWithViewController:(UIViewController*)viewController title:(NSString*)title message:(NSString*)message;
 - (id)initWithParentView:(UIView*)parentView view:(UIView*)view;
 - (id)initWithParentView:(UIView*)parentView title:(NSString*)title message:(NSString*)message;

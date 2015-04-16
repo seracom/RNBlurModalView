@@ -229,6 +229,24 @@ typedef void (^RNBlurCompletion)(void);
     return self;
 }
 
+- (id)initWithViewController:(UIViewController*)viewController view:(UIView*)view center:(CGPoint) center
+{
+    if (self = [self initWithFrame:CGRectMake(0, 0, viewController.view.width, viewController.view.height)]) {
+        [self addSubview:view];
+        _contentView = view;
+        _contentView.center = center;
+        _controller = viewController;
+        _parentView = nil;
+        _contentView.clipsToBounds = YES;
+        _contentView.layer.masksToBounds = YES;
+        
+        _dismissButton.center = CGPointMake(view.left, view.top);
+        [self addSubview:_dismissButton];
+    }
+    return self;
+}
+
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     
